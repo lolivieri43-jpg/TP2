@@ -16,4 +16,4 @@ Ouvrir le dossier du projet dans Visual Studio Code, puis ouvrir le fichier `ind
 avec l’extension Live Preview ou directement dans un navigateur web.
 
 ## Auteur
-Nom Prénom – BTS SIO
+Olivieri Lorenzo – BTS SIO
