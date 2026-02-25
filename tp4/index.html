@@ -1,0 +1,197 @@
+<br>
+
+<!-- TP8 LES TABLEAUX -->
+<div style="background:#1f3c88; color:white; padding:20px; border-radius:6px;">
+    <h1 style="margin:0;">TP8 : LES TABLEAUX</h1>
+</div>
+
+<br>
+
+<div style="background:white; padding:20px; border-radius:6px; border:1px solid #ccc;">
+
+    <h2>Introduction</h2>
+
+    <p>
+        Dans ce TP, il est demandé d'écrire des fonctions utilitaires permettant
+        de travailler avec les tableaux. Ces fonctions seront réutilisables
+        dans d'autres TP.
+    </p>
+
+    <p>
+        Le tableau contient N éléments. Il est interdit d'ajouter,
+        d'insérer ou de supprimer des cases.
+    </p>
+
+    <div style="background:#f0f0f0; padding:15px; border-radius:4px;">
+<pre>
+let N = parseInt(prompt("Combien de case pour le tableau ?"));
+let A = new Array(N);
+let nbElemRempli = 0; // le tableau contient N cases vides
+</pre>
+    </div>
+
+    <p>Aperçu d’un tableau vide :</p>
+
+    <div style="background:#f0f0f0; padding:15px; border-radius:4px;">
+<pre>
+Index : 0   1   2   3   ...   N-2   N-1
+Valeur: undefined undefined undefined ...
+</pre>
+    </div>
+
+    <h3>Méthode de travail</h3>
+
+    <ol>
+        <li>Boîte noire : définir les entrées et sorties</li>
+        <li>Coder la fonction dans un fichier .js séparé</li>
+        <li>Ajouter le mode d’emploi</li>
+        <li>Tester avec l’inspecteur du navigateur</li>
+    </ol>
+
+</div>
+
+<br>
+
+<!-- EXERCICES -->
+<div style="background:white; padding:20px; border-radius:6px; border:1px solid #ccc;">
+
+    <h2>Exercices</h2>
+
+    <h3>Exercice 1</h3>
+    <p>initialiserTab1() : initialise toutes les cases à 0.</p>
+
+    <h3>Exercice 2</h3>
+    <p>initialiserTab2(valeur) : initialise toutes les cases avec une valeur passée en paramètre.</p>
+
+    <h3>Exercice 3</h3>
+    <p>remplirTab1(min, max) : remplit tout le tableau avec des valeurs aléatoires entre MIN et MAX.</p>
+
+    <h3>Exercice 4</h3>
+    <p>
+        remplirTab2(nb, min, max) : remplit un certain nombre de cases
+        à partir de la première case vide (nbElemRempli).
+        Si dépassement, on remplit jusqu'à N.
+    </p>
+
+    <div style="background:#f0f0f0; padding:15px; border-radius:4px;">
+<pre>
+Exemple :
+
+Index : 0   1   2   3   4   5   6   7
+Valeur: 5   12  3   undefined ...
+nbElemRempli = 3
+</pre>
+    </div>
+
+    <h3>Exercice 5</h3>
+    <p>afficherTab1() : affiche uniquement les cases remplies.</p>
+
+    <h3>Exercice 6</h3>
+    <p>afficherTab2() : affiche toutes les cases.</p>
+
+    <h3>Exercice 7</h3>
+    <p>afficherTab3(deb, fin) : affiche les cases entre DEB et FIN.</p>
+
+    <h3>Exercice 8</h3>
+    <p>
+        remplirElement(valeur) : insère une valeur dans la première case vide.
+        Retourne false si le tableau est plein,
+        sinon retourne le nombre d’éléments remplis.
+    </p>
+
+    <h3>Exercice 9</h3>
+    <p>
+        saisirTab() : permet à l’utilisateur de saisir des valeurs
+        ajoutées à partir de la première case vide.
+        Retourne le nombre de cases remplies.
+    </p>
+
+</div>
+<div style="background:#1f3c88; color:white; padding:20px; border-radius:6px;">
+    <h2 style="margin:0;">Fichier utilitaires.js</h2>
+</div>
+
+<br>
+
+<div style="background:white; padding:20px; border-radius:6px; border:1px solid #ccc;">
+
+    <div style="background:#f0f0f0; padding:15px; border-radius:4px; overflow-x:auto;">
+<pre>
+function initialiserTab1(A) {
+    for (let i = 0; i < A.length; i++) {
+        A[i] = 0;
+    }
+    return A.length;
+}
+
+function initialiserTab2(A, val) {
+    for (let i = 0; i < A.length; i++) {
+        A[i] = val;
+    }
+    return A.length;
+}
+
+function remplirTab1(A, MIN, MAX) {
+    for (let i = 0; i < A.length; i++) {
+        A[i] = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+    }
+    return A.length;
+}
+
+function remplirTab2(A, nbElemRempli, nbARemplir, MIN, MAX) {
+    let i = nbElemRempli;
+    let fin = Math.min(A.length, nbElemRempli + nbARemplir);
+    while (i < fin) {
+        A[i] = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+        i++;
+    }
+    return i;
+}
+
+function afficherTab1(A, nbElemRempli) {
+    let res = "";
+    for (let i = 0; i < nbElemRempli; i++) {
+        res += A[i] + " ";
+    }
+    console.log(res);
+}
+
+function afficherTab2(A) {
+    let res = "";
+    for (let i = 0; i < A.length; i++) {
+        res += A[i] + " ";
+    }
+    console.log(res);
+}
+
+function afficherTab3(A, DEB, FIN) {
+    let res = "";
+    for (let i = DEB; i <= FIN && i < A.length; i++) {
+        res += A[i] + " ";
+    }
+    console.log(res);
+}
+
+function remplirElement(A, nbElemRempli, val) {
+    if (nbElemRempli >= A.length) {
+        return false;
+    }
+    A[nbElemRempli] = val;
+    return nbElemRempli + 1;
+}
+
+function saisirTab(A, nbElemRempli) {
+    let nb = parseInt(prompt("Combien de valeurs voulez-vous saisir ?"));
+    let i = 0;
+    while (i < nb && nbElemRempli < A.length) {
+        let val = parseInt(prompt("Donnez une valeur :"));
+        A[nbElemRempli] = val;
+        nbElemRempli++;
+        i++;
+    }
+    return nbElemRempli;
+}
+</pre>
+    </div>
+
+</div>
