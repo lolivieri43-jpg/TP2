@@ -49,44 +49,46 @@
 
         main {
             max-width: 900px;
-            margin: 36px auto;
+            margin: 40px auto;
             padding: 20px;
             width: 100%;
             box-sizing: border-box;
             flex:1;
         }
 
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            align-items: stretch;
-        }
-
-        .card {
+        .tp-card {
             background: var(--card);
-            padding: 18px;
-            border-radius: 10px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            display:flex;
-            align-items:center;
-            justify-content:center;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
 
-        .card a {
-            display:block;
-            width:100%;
-            text-decoration:none;
+        .tp-card h2 {
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+            font-size: 1.2rem;
+        }
+
+        .tp-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tp-card li {
+            margin-bottom: 8px;
+        }
+
+        .tp-card a {
+            text-decoration: none;
             color: var(--accent);
-            font-weight:700;
-            font-size:1rem;
-            text-align:center;
-            padding:12px 8px;
+            font-weight: 600;
         }
 
-        .card a:hover {
-            transform: translateY(-4px);
-            transition: transform 160ms ease;
+        .tp-card a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -94,7 +96,6 @@
             padding: 18px 12px;
             font-size: 0.9rem;
             color: var(--muted);
-            background: transparent;
         }
 
         @media (max-width:420px){
@@ -107,18 +108,58 @@
 <body>
 
 <header>
-    <h1>BTS SIO</h1>
-    <p>Travaux Pratiques & CV</p>
+    <h1>Mes Travaux Pratiques Web</h1>
+    <p>Page d’accueil de mes différents TP – BTS SIO</p>
 </header>
 
 <main>
-    <div class="menu" role="navigation" aria-label="Menu des travaux pratiques">
-        <div class="card"><a href="tp1/index.html">TP1</a></div>
-        <div class="card"><a href="tp2/index.html">TP2</a></div>
-        <div class="card"><a href="tp3/index.html">TP3</a></div>
-        <div class="card"><a href="tp4/index.html">TP4</a></div>
-        <div class="card"><a href="tp3/cv.html">CV</a></div>
+
+    <div class="tp-card">
+        <h2>TP1</h2>
+        <ul>
+            <li><a href="tp1/index.html">Accéder au TP1</a></li>
+        </ul>
     </div>
+
+    <div class="tp-card">
+        <h2>TP2</h2>
+        <ul>
+            <li><a href="tp2/index.html">Accéder au TP2</a></li>
+        </ul>
+    </div>
+
+    <div class="tp-card">
+        <h2>TP3</h2>
+        <ul>
+            <li><a href="tp3/index.html">Accéder au TP3</a></li>
+            <li><a href="tp3/cv.html">CV</a></li>
+        </ul>
+    </div>
+
+    <div class="tp-card">
+        <h2>TP4 – Les Liens HTML</h2>
+        <ul>
+            <li><a href="tp4/index.html">Accéder au TP4</a></li>
+            <li><a href="tp4/tp8.html">TP8 – JavaScript (Tableaux)</a></li>
+        </ul>
+    </div>
+
+    <div class="tp-card">
+        <h2>TP5</h2>
+        <ul>
+            <li><a href="tp5/index.html">Exercice 1</a></li>
+            <li><a href="tp5/exercice2.html">Exercice 2</a></li>
+            <li><a href="tp5/exercice3.html">Exercice 3</a></li>
+        </ul>
+    </div>
+
+    <div class="tp-card">
+        <h2>TP6</h2>
+        <ul>
+            <li><a href="tp6/index.html">Accéder au TP6</a></li>
+        </ul>
+    </div>
+
 </main>
 
 <footer>
