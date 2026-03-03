@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP8 – JavaScript (Tableaux)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        a {
+            color: #2c3e50;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>TP8 – JavaScript (Tableaux)</h1>
+    <p>Fonctions utilitaires sur les tableaux</p>
+</header>
+
+<main>
+
+<div class="section">
+    <h2>Introduction</h2>
+    <p>
+        Ce TP consiste à créer des fonctions utilitaires permettant
+        de manipuler un tableau de taille fixe.
+    </p>
+
+<pre>
+let N = parseInt(prompt("Combien de cases ?"));
+let A = new Array(N);
+let nbElemRempli = 0;
+</pre>
+</div>
+
+<div class="section">
+    <h2>Exercices</h2>
+
+    <ul>
+        <li>initialiserTab1()</li>
+        <li>initialiserTab2()</li>
+        <li>remplirTab1()</li>
+        <li>remplirTab2()</li>
+        <li>afficherTab1()</li>
+        <li>afficherTab2()</li>
+        <li>afficherTab3()</li>
+        <li>remplirElement()</li>
+        <li>saisirTab()</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Fichier utilitaires.js</h2>
+
+<pre>
+function initialiserTab1(A) {
+    for (let i = 0; i < A.length; i++) {
+        A[i] = 0;
+    }
+    return A.length;
+}
+</pre>
+
+    <p>Voir le fichier complet dans utilitaires.js</p>
+</div>
+
+</main>
+
+<footer>
+    <a href="../index.html">⬅ Retour à l'accueil</a>
+</footer>
+
+</body>
+</html>
