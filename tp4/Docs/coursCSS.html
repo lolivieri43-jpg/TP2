@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours CSS - Bases</title>
+    <link rel="stylesheet" href="../Style/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Langage CSS</h1>
+    <p>Mise en forme des pages Web</p>
+</header>
+
+<main>
+
+<h2 id="sommaire">Sommaire</h2>
+<ul>
+    <li><a href="#definition">1 - Définition du CSS</a></li>
+    <li><a href="#syntaxe">2 - Syntaxe</a></li>
+    <li><a href="#selecteurs">3 - Les sélecteurs</a></li>
+    <li><a href="#proprietes">4 - Propriétés principales</a></li>
+    <li><a href="#integration">5 - Intégration du CSS</a></li>
+</ul>
+
+<hr>
+
+<h2 id="definition">1 - Définition du CSS</h2>
+<p>
+CSS signifie <strong>Cascading Style Sheets</strong>.  
+Il permet de styliser le HTML.
+</p>
+
+<a href="#sommaire">⬆ Retour au sommaire</a>
+
+<hr>
+
+<h2 id="syntaxe">2 - Syntaxe</h2>
+
+<pre><code>
+selecteur {
+    propriete: valeur;
+}
+</code></pre>
+
+Exemple :
+
+<pre><code>
+p {
+    color: blue;
+    font-size: 18px;
+}
+</code></pre>
+
+<a href="#sommaire">⬆ Retour au sommaire</a>
+
+<hr>
+
+<h2 id="selecteurs">3 - Les sélecteurs</h2>
+
+<h3>Par balise</h3>
+<pre><code>
+h1 {
+    color: red;
+}
+</code></pre>
+
+<h3>Par classe</h3>
+<pre><code>
+.important {
+    color: green;
+}
+</code></pre>
+
+<h3>Par identifiant</h3>
+<pre><code>
+#titre {
+    font-size: 30px;
+}
+</code></pre>
+
+<a href="#sommaire">⬆ Retour au sommaire</a>
+
+<hr>
+
+<h2 id="proprietes">4 - Propriétés principales</h2>
+
+<pre><code>
+color
+background-color
+font-size
+margin
+padding
+border
+width
+height
+display
+</code></pre>
+
+Exemple :
+
+<pre><code>
+div {
+    background-color: lightgray;
+    padding: 20px;
+    margin: 10px;
+}
+</code></pre>
+
+<a href="#sommaire">⬆ Retour au sommaire</a>
+
+<hr>
+
+<h2 id="integration">5 - Intégration du CSS</h2>
+
+<h3>Dans le head</h3>
+
+<pre><code>
+&lt;style&gt;
+p { color: blue; }
+&lt;/style&gt;
+</code></pre>
+
+<h3>Fichier externe (recommandé)</h3>
+
+<pre><code>
+&lt;link rel="stylesheet" href="style.css"&gt;
+</code></pre>
+
+<a href="#sommaire">⬆ Retour au sommaire</a>
+
+<hr>
+
+<p>📄 <a href="../Docs/coursCSS.pdf" download>Télécharger le cours en PDF</a></p>
+
+<p>📧 <a href="mailto:prof@email.com?subject=Cours CSS - Bases">
+Contacter l'auteur du cours</a></p>
+
+</main>
+
+<footer>
+    <a href="../index.html">⬅ Retour à l'accueil TP4</a>
+</footer>
+
+</body>
+</html>
