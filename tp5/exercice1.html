@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TP5 - Exercice 1 - Vacances Scolaires</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:0;
+        background:#f4f6f9;
+    }
+
+    header{
+        background:#1e3a8a;
+        color:white;
+        text-align:center;
+        padding:20px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse; /* IMPORTANT pour lignes propres */
+    }
+
+    th, td{
+        border:2px solid black; /* 🔥 LIGNES NOIRES */
+        padding:15px;
+        vertical-align:top;
+    }
+
+    .zoneA{
+        background:#f79a7f;
+    }
+
+    .zoneB{
+        background:#6f8ef5;
+    }
+
+    .zoneC{
+        background:#5cc09a;
+    }
+
+    .corse{
+        background:#f3c54b;
+    }
+
+    .titreLigne{
+        background:#e6e6e6;
+        font-weight:bold;
+        width:220px;
+    }
+
+    .centre{
+        text-align:center;
+        font-weight:bold;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Vacances scolaires - Zones A, B, C et Corse</h1>
+</header>
+
+<table>
+
+    <tr>
+        <td class="titreLigne"></td>
+        <td class="zoneA centre">ZONE A</td>
+        <td class="zoneB centre">ZONE B</td>
+        <td class="zoneC centre">ZONE C</td>
+        <td class="corse centre">CORSE</td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Prérentrée</td>
+        <td colspan="3" class="centre">29 août 2025</td>
+        <td class="centre">1er septembre</td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Rentrée</td>
+        <td colspan="3" class="centre">1er septembre 2025</td>
+        <td class="centre">2 septembre</td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Toussaint</td>
+        <td colspan="4" class="centre">
+            Fin : 18 octobre 2025<br>
+            Reprise : 3 novembre 2025
+        </td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Noël</td>
+        <td colspan="4" class="centre">
+            Fin : 20 décembre 2025<br>
+            Reprise : 5 janvier 2026
+        </td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Hiver</td>
+        <td class="zoneA">7 fév → 23 fév 2026</td>
+        <td class="zoneB">14 fév → 2 mars 2026</td>
+        <td class="zoneC">21 fév → 9 mars 2026</td>
+        <td class="corse centre">NC</td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Printemps</td>
+        <td class="zoneA">4 avr → 20 avr 2026</td>
+        <td class="zoneB">11 avr → 27 avr 2026</td>
+        <td class="zoneC">18 avr → 4 mai 2026</td>
+        <td class="corse centre">NC</td>
+    </tr>
+
+    <tr>
+        <td class="titreLigne">Été</td>
+        <td colspan="4" class="centre">
+            Fin des cours : 4 juillet 2026
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
