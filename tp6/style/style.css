@@ -6,18 +6,15 @@ min-width:600px;
 
 margin:0;
 font-family:Arial;
-
 background:#f4f4f4;
 
 }
 
 header{
-
 background:#2c3e50;
 color:white;
 text-align:center;
 padding:20px;
-
 }
 
 .memory{
@@ -26,55 +23,57 @@ width:900px;
 margin:40px auto;
 
 display:grid;
-
 grid-template-columns:repeat(5,1fr);
-
 gap:15px;
 
 }
 
 .card{
 
-background:#3498db;
-
+position:relative;
 height:140px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
+background:#3498db;
 border-radius:6px;
-
-cursor:pointer;
 
 }
 
-.card:hover{
+.card input{
+display:none;
+}
 
-background:#2980b9;
+.card label{
+
+position:absolute;
+width:100%;
+height:100%;
+background:#3498db;
+cursor:pointer;
 
 }
 
 .card img{
 
-width:120px;
-
-border:solid 1px black;
-
+width:100%;
+height:100%;
+object-fit:contain;
 opacity:0;
 
-transition:0.3s;
+border:1px solid black;
 
 }
 
-.card input{
+/* L'image reste visible après clic */
 
-display:none;
-
-}
-
-.card input:checked + img{
+.card input:checked ~ img{
 
 opacity:1;
+
+}
+
+/* on enlève le cache une fois cliqué */
+
+.card input:checked + label{
+
+display:none;
 
 }
