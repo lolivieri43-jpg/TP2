@@ -1,127 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-<meta charset="UTF-8">
-<title>TP6 - Memory</title>
-<link rel="stylesheet" href="style/style.css">
-
+    <meta charset="UTF-8">
+    <title>TP6 - Jeu du Memory</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
 
 <header>
-<h1>Jeu du Memory</h1>
+    <h1>Jeu du Memory</h1>
+    <p>Trouvez les paires ! (Délai de réflexion : 20s)</p>
 </header>
 
 <main>
-
-<div class="memory">
-
-<!-- carte 1 -->
-<input type="checkbox" id="c1">
-<label for="c1" class="card">
-<img src="assets/images/img1.png">
-</label>
-
-<input type="checkbox" id="c2">
-<label for="c2" class="card">
-<img src="assets/images/img4.png">
-</label>
-
-<input type="checkbox" id="c3">
-<label for="c3" class="card">
-<img src="assets/images/img2.png">
-</label>
-
-<input type="checkbox" id="c4">
-<label for="c4" class="card">
-<img src="assets/images/img7.png">
-</label>
-
-<input type="checkbox" id="c5">
-<label for="c5" class="card">
-<img src="assets/images/img5.png">
-</label>
-
-<input type="checkbox" id="c6">
-<label for="c6" class="card">
-<img src="assets/images/img3.png">
-</label>
-
-<input type="checkbox" id="c7">
-<label for="c7" class="card">
-<img src="assets/images/img8.png">
-</label>
-
-<input type="checkbox" id="c8">
-<label for="c8" class="card">
-<img src="assets/images/img1.png">
-</label>
-
-<input type="checkbox" id="c9">
-<label for="c9" class="card">
-<img src="assets/images/img6.png">
-</label>
-
-<input type="checkbox" id="c10">
-<label for="c10" class="card">
-<img src="assets/images/img9.png">
-</label>
-
-<input type="checkbox" id="c11">
-<label for="c11" class="card">
-<img src="assets/images/img4.png">
-</label>
-
-<input type="checkbox" id="c12">
-<label for="c12" class="card">
-<img src="assets/images/img2.png">
-</label>
-
-<input type="checkbox" id="c13">
-<label for="c13" class="card">
-<img src="assets/images/img10.png">
-</label>
-
-<input type="checkbox" id="c14">
-<label for="c14" class="card">
-<img src="assets/images/img7.png">
-</label>
-
-<input type="checkbox" id="c15">
-<label for="c15" class="card">
-<img src="assets/images/img5.png">
-</label>
-
-<input type="checkbox" id="c16">
-<label for="c16" class="card">
-<img src="assets/images/img8.png">
-</label>
-
-<input type="checkbox" id="c17">
-<label for="c17" class="card">
-<img src="assets/images/img6.png">
-</label>
-
-<input type="checkbox" id="c18">
-<label for="c18" class="card">
-<img src="assets/images/img3.png">
-</label>
-
-<input type="checkbox" id="c19">
-<label for="c19" class="card">
-<img src="assets/images/img9.png">
-</label>
-
-<input type="checkbox" id="c20">
-<label for="c20" class="card">
-<img src="assets/images/img10.png">
-</label>
-
-</div>
-
+    <div class="memory" id="game-board">
+        <div class="card" data-image="1"><img src="assets/images/img1.png"></div>
+        <div class="card" data-image="1"><img src="assets/images/img1.png"></div>
+        <div class="card" data-image="2"><img src="assets/images/img2.png"></div>
+        <div class="card" data-image="2"><img src="assets/images/img2.png"></div>
+        <div class="card" data-image="3"><img src="assets/images/img3.png"></div>
+        <div class="card" data-image="3"><img src="assets/images/img3.png"></div>
+        <div class="card" data-image="4"><img src="assets/images/img4.png"></div>
+        <div class="card" data-image="4"><img src="assets/images/img4.png"></div>
+        <div class="card" data-image="5"><img src="assets/images/img5.png"></div>
+        <div class="card" data-image="5"><img src="assets/images/img5.png"></div>
+        <div class="card" data-image="6"><img src="assets/images/img6.png"></div>
+        <div class="card" data-image="6"><img src="assets/images/img6.png"></div>
+        <div class="card" data-image="7"><img src="assets/images/img7.png"></div>
+        <div class="card" data-image="7"><img src="assets/images/img7.png"></div>
+        <div class="card" data-image="8"><img src="assets/images/img8.png"></div>
+        <div class="card" data-image="8"><img src="assets/images/img8.png"></div>
+        <div class="card" data-image="9"><img src="assets/images/img9.png"></div>
+        <div class="card" data-image="9"><img src="assets/images/img9.png"></div>
+        <div class="card" data-image="10"><img src="assets/images/img10.png"></div>
+        <div class="card" data-image="10"><img src="assets/images/img10.png"></div>
+    </div>
 </main>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard, secondCard;
+
+    function flipCard() {
+        if (lockBoard) return;
+        if (this === firstCard) return;
+
+        this.classList.add('flip');
+
+        if (!hasFlippedCard) {
+            hasFlippedCard = true;
+            firstCard = this;
+            return;
+        }
+
+        secondCard = this;
+        checkForMatch();
+    }
+
+    function checkForMatch() {
+        let isMatch = firstCard.dataset.image === secondCard.dataset.image;
+        isMatch ? disableCards() : unflipCards();
+    }
+
+    function disableCards() {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
+        resetBoard();
+    }
+
+    function unflipCards() {
+        lockBoard = true;
+        // C'est ici qu'on applique tes 20 secondes (20000ms)
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+            resetBoard();
+        }, 20000); 
+    }
+
+    function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+    }
+
+    (function shuffle() {
+        cards.forEach(card => {
+            let randomPos = Math.floor(Math.random() * 20);
+            card.style.order = randomPos;
+        });
+    })();
+
+    cards.forEach(card => card.addEventListener('click', flipCard));
+</script>
 
 </body>
 </html>
