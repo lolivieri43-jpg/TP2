@@ -1,0 +1,112 @@
+body{
+margin:0;
+font-family:Arial;
+background:#eef1f5;
+}
+
+/* PAGE ACCUEIL */
+
+.accueil{
+text-align:center;
+margin-top:150px;
+}
+
+.accueil h1{
+font-size:40px;
+color:#2c3e50;
+}
+
+.btn{
+display:inline-block;
+margin:20px;
+padding:15px 40px;
+background:#3498db;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:20px;
+}
+
+.btn:hover{
+background:#2ecc71;
+}
+
+/* HEADER */
+
+header{
+background:#2c3e50;
+color:white;
+padding:30px;
+text-align:center;
+font-size:28px;
+}
+
+/* MENU */
+
+nav{
+background:#34495e;
+}
+
+nav ul{
+margin:0;
+padding:0;
+list-style:none;
+text-align:center;
+}
+
+nav li{
+display:inline-block;
+}
+
+nav a{
+display:block;
+padding:15px 25px;
+color:white;
+text-decoration:none;
+}
+
+nav a:hover{
+background:#1abc9c;
+}
+
+/* CONTENU */
+
+article{
+width:90%;
+margin:auto;
+margin-top:20px;
+overflow:hidden;
+}
+
+.menu{
+width:30%;
+float:left;
+background:#e74c3c;
+height:420px;
+color:white;
+text-align:center;
+line-height:420px;
+font-size:22px;
+}
+
+section{
+width:70%;
+float:right;
+background:#2ecc71;
+height:420px;
+color:white;
+text-align:center;
+line-height:420px;
+font-size:22px;
+}
+
+/* FOOTER */
+
+footer{
+clear:both;
+background:#9b59b6;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
